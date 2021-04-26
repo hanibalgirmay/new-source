@@ -1,8 +1,16 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import env from "dotenv";
+import moment from 'moment';
+import Vuemoment from 'vue-moment';
+import router from './router'
 
-Vue.config.productionTip = false
+env.config();
+
+Vue.use(Vuemoment,{moment});
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  render: (h) => h(App)
+}).$mount("#app");
